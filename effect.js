@@ -1,15 +1,34 @@
 
+// const button = document.querySelector('.button');
 
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-    var currentScrollPos = window.pageYOffset;
-    console.log("Scroll", prevScrollpos, currentScrollPos);
+// button.addEventListener('click', () => {
+//     let overlay = document.createElement('span');
+//     overlay.style.cssText = "
+//     position: absolute;
+//     height: 200px;
+//     width: 200px;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     background-color: #22646e;
+//     z-index: -1;
+//     border-radius: 50%;
+//     opacity: 0;
+//     animation= button_animation 1s ease;
+//     "
 
-    if (prevScrollpos > currentScrollPos) {
-        // document.getElementById("footer-items").style.top = "0";
-    } else {
-        // document.getElementById("footer-items").style.top = "-50px";
-    }
-    prevScrollpos = currentScrollPos;
-}
+//     button.appendChild(overlay)
+// })
 
+const buttons = document.querySelector('.button');
+
+buttons.forEach(btn => {
+    btn.addEventListener('click', e => {
+        let xAxis = e.clientX - e.target.offSetLeft
+        let yAxis = e.clientY - e.target.offSetTop
+
+        let span = document.createElement('span');
+        span.style.left = $ {xAxis}px
+
+    })
+})
