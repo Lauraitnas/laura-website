@@ -1,26 +1,15 @@
-$(window).scroll(function(event) {
-	function footer()
-    {
-        var scroll = $(window).scrollTop(); 
-        if(scroll > 50)
-        { 
-            $(".footer-nav").fadeIn("slow").addClass("show");
-        }
-        else
-        {
-            $(".footer-nav").fadeOut("slow").removeClass("show");
-        }
-        
-        clearTimeout($.data(this, 'scrollTimer'));
-        $.data(this, 'scrollTimer', setTimeout(function() {
-            if ($('.footer-nav').is(':hover')) {
-	        	footer();
-    		}
-            else
-            {
-            	$(".footer-nav").fadeOut("slow");
-            }
-		}, 2000));
+
+
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    console.log("Scroll", prevScrollpos, currentScrollPos);
+
+    if (prevScrollpos > currentScrollPos) {
+        // document.getElementById("footer-items").style.top = "0";
+    } else {
+        // document.getElementById("footer-items").style.top = "-50px";
     }
-    footer();
-});
+    prevScrollpos = currentScrollPos;
+}
+
